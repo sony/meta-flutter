@@ -1,5 +1,10 @@
 # meta-flutter for Yocto Project
-Recipe file of [Flutter for Embedded Linux](https://github.com/sony/flutter-embedded-linux) for Yocto Project.
+This project was created to build the [Flutter Engine](https://github.com/flutter/engine) and [Flutter for Embedded Linux](https://github.com/sony/flutter-embedded-linux) for Yocto Project based distributions.
+
+See also: [Flutter for Embedded Linux](https://github.com/sony/flutter-embedded-linux)
+
+## Contributing
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Setup environment
 In this README, we explain how to build for Arm64 using `core-image-weston` which is one of Yocto Images, and `dunfell` which is one of LTS Yocto versions. See also: https://docs.yoctoproject.org/
