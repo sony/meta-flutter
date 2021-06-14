@@ -12,7 +12,7 @@ In this README, we explain how to build for Arm64 using `core-image-weston` whic
 There are two ways to build using Yocto. One is a build using bitbake and the other is a build using Yocto SDK.
 
 ### Building Yocto
-Downloading `Poky` and `meta-clang`, `meta-flutter` source code:
+Downloading `Poky`, `meta-clang`, and `meta-flutter`:
 ```Shell
 $ git clone git://git.yoctoproject.org/poky.git -b dunfell
 $ git clone https://github.com/kraj/meta-clang -b dunfell
@@ -29,12 +29,12 @@ Set your target machine in your `conf/local.conf`:
 MACHINE ?= "qemuarm64"
 ```
 
-Add meta-clang layer into `conf/bblayers.conf`.
+Add `meta-clang` layer to `conf/bblayers.conf`.
 ```Shell
 $ bitbake-layers add-layer ../meta-clang
 ```
 
-Add meta-flutter layer into `conf/bblayers.conf`.
+Add `meta-flutter` layer to `conf/bblayers.conf`.
 ```Shell
 $ bitbake-layers add-layer ../meta-flutter
 ```
@@ -57,9 +57,9 @@ Install Yocto SDK.
 $ ./tmp/deploy/sdk/poky-glibc-x86_64-core-image-weston-aarch64-qemuarm64-toolchain-3.1.7.sh
 ```
 
-## Cross-building with bitbake
+## Cross-building using bitbake
 ### Flutter Engine (libflutter_engine.so)
-Build target is fixed to Linux and Arm64, and Flutter Engine version is also fixed in the recipe file.
+The default build target is fixed to Linux and Arm64, and the Flutter Engine version is also fixed in the recipe file.
 
 #### Flutter Engine version
 ```
@@ -74,8 +74,9 @@ If you want to change the version of the Flutter engine, change <engine_version>
 ENGINE_VERSION_pn-flutter-engine = "<engine_version>"
 ```
 
-Flutter Engine is built with release mode by default. If you want to change the build mode, you can change it to add the following in your `conf/local.conf`:
 #### Flutter Engine mode
+Flutter Engine is built with release mode by default. If you want to change the build mode, you can change it to add the following in your `conf/local.conf`:
+
 ```
 # e.g. debug mode
 PACKAGECONFIG_pn-flutter-engine = "debug-mode"
@@ -104,7 +105,7 @@ You need to install libsystemd in the same way with the DRM-GBM backend.
 $ bitbake flutter-drm-eglstream-backend
 ```
 
-## Cross-building with Yocto SDK
+## Cross-building using Yocto SDK
 Setup the cross-building toolchain environment using a script that you built and installed.
 ```Shell
 $ source /opt/poky/3.1.7/environment-setup-aarch64-poky-linux
