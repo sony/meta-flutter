@@ -1,4 +1,4 @@
-SUMMARY = "Flutter embedding for embedded Linux with DRM-GBM backend"
+SUMMARY = "Flutter embedding for eLinux with DRM-GBM backend"
 DESCRIPTION = "Build the flutter-drm-gbm-backend project"
 
 require repository.inc

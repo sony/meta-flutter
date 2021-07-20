@@ -1,4 +1,4 @@
-SUMMARY = "Flutter embedding for embedded Linux with DRM-EGLStream backend"
+SUMMARY = "Flutter embedding for eLinux with DRM-EGLStream backend"
 DESCRIPTION = "Build the flutter-drm-eglstream-backend project"
 
 require repository.inc

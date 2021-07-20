@@ -1,4 +1,4 @@
-SUMMARY = "Flutter embedding for embedded Linux with Wayland backend"
+SUMMARY = "Flutter embedding for eLinux with Wayland backend"
 DESCRIPTION = "Build the flutter-wayland-client project"
 
 require repository.inc
