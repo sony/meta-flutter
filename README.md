@@ -1,5 +1,5 @@
 # meta-flutter for Yocto Project
-This project was created to build the [Flutter Engine](https://github.com/flutter/engine) and [Flutter for Embedded Linux](https://github.com/sony/flutter-embedded-linux) for Yocto Project based distributions. See also: [Flutter for Embedded Linux](https://github.com/sony/flutter-embedded-linux)
+This project was created to build the [Embedded Linux (eLinux) embedding for Flutter](https://github.com/sony/flutter-embedded-linux) and [Flutter Engine](https://github.com/flutter/engine) for Yocto Project based distributions.
 
 ## Companion repos
 | Repo | Purpose |
@@ -69,14 +69,14 @@ The default build target is fixed to Linux and Arm64, and the Flutter Engine ver
 
 #### Flutter Engine version
 ```
-ENGINE_VERSION ?= "fbeb7e22bd6d594a16c487cc138970fbd2a77d40"
+ENGINE_VERSION ?= "7a4c4505f6a7a1aa758d62b58150dce43cfa473f"
 ```
 
 When creating a Flutter project, you will need to use the following version of the Flutter SDK.  
 
 | Engine version | Flutter SDK version |
 | :-------------: | :-------------: |
-| [fbeb7e22bd6d594a16c487cc138970fbd2a77d40](https://github.com/flutter/engine/commit/fbeb7e22bd6d594a16c487cc138970fbd2a77d40) | [2.5.0-5.1.pre (beta channel)](https://github.com/flutter/flutter/releases/tag/2.5.0-5.1.pre) |
+| [7a4c4505f6a7a1aa758d62b58150dce43cfa473f](https://github.com/flutter/engine/commit/7a4c4505f6a7a1aa758d62b58150dce43cfa473f) | [2.5.0-5.2.pre (beta channel)](https://github.com/flutter/flutter/releases/tag/2.5.0-5.2.pre) |
 
 If you want to change the version of the Flutter engine, change <engine_version> to the appropriate version of the Flutter SDK and add the following to `conf/local.conf`:
 ```
