@@ -7,7 +7,6 @@ This project was created to build the [Embedded Linux (eLinux) embedding for Flu
 | [flutter-elinux](https://github.com/sony/flutter-elinux) | Flutter tools for eLinux |
 | [flutter-elinux-plugins](https://github.com/sony/flutter-elinux-plugins) | Flutter plugins for eLinux |
 | [flutter-embedded-linux](https://github.com/sony/flutter-embedded-linux) | eLinux embedding for Flutter |
-| [meta-flutter](https://github.com/sony/meta-flutter) | Yocto recipes of eLinux embedding for Flutter |
 
 ## Contributing
 See [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -69,14 +68,14 @@ The default build target is fixed to Linux and Arm64, and the Flutter Engine ver
 
 #### Flutter Engine version
 ```
-ENGINE_VERSION ?= "fcde2c8b2f0891c80e1f0f794bc7c26dd50f2949"
+ENGINE_VERSION ?= "f0826da7ef2d301eb8f4ead91aaf026aa2b52881"
 ```
 
 When creating a Flutter project, you will need to use the following version of the Flutter SDK.  
 
 | Engine version | Flutter SDK version |
 | :-------------: | :-------------: |
-| [fcde2c8b2f0891c80e1f0f794bc7c26dd50f2949](https://github.com/flutter/engine/commit/fcde2c8b2f0891c80e1f0f794bc7c26dd50f2949) | [2.5.0-5.3.pre (beta channel)](https://github.com/flutter/flutter/releases/tag/2.5.0-5.3.pre) |
+| [f0826da7ef2d301eb8f4ead91aaf026aa2b52881](https://github.com/flutter/engine/commit/f0826da7ef2d301eb8f4ead91aaf026aa2b52881) | [2.5.0 (stable channel)](https://github.com/flutter/flutter/releases/tag/2.5.0) |
 
 If you want to change the version of the Flutter engine, change <engine_version> to the appropriate version of the Flutter SDK and add the following to `conf/local.conf`:
 ```
