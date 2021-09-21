@@ -15,8 +15,8 @@ GN_TOOLS_PYTHON2_PATH ??= "bootstrap-3.8.0.chromium.8_bin/python/bin"
 
 require gn-args-utils.inc
 
-# Flutter 2.5.0 (stable channel)
-ENGINE_VERSION ?= "f0826da7ef2d301eb8f4ead91aaf026aa2b52881"
+# Flutter 2.5.1 (stable channel)
+ENGINE_VERSION ?= "b3af521a050e6ef076778bcaf16e27b2521df8f8"
 PACKAGECONFIG ?= "release-mode"
 PACKAGECONFIG[debug-mode] = "--runtime-mode debug --unoptimized"
 PACKAGECONFIG[profile-mode] = "--runtime-mode profile --no-lto"
