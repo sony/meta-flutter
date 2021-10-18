@@ -68,14 +68,14 @@ The default build target is fixed to Linux and Arm64, and the Flutter Engine ver
 
 #### Flutter Engine version
 ```
-ENGINE_VERSION ?= "6ac856380fa4f66469552ce986edf59f65f7cd68"
+ENGINE_VERSION ?= "d3ea636dc5d16b56819f3266241e1f708979c233"
 ```
 
 When creating a Flutter project, you will need to use the following version of the Flutter SDK.  
 
 | Engine version | Flutter SDK version |
 | :-------------: | :-------------: |
-| [6ac856380fa4f66469552ce986edf59f65f7cd68](https://github.com/flutter/engine/commit/6ac856380fa4f66469552ce986edf59f65f7cd68) | [2.5.2 (stable channel)](https://github.com/flutter/flutter/releases/tag/2.5.2) |
+| [d3ea636dc5d16b56819f3266241e1f708979c233](https://github.com/flutter/engine/commit/d3ea636dc5d16b56819f3266241e1f708979c233) | [2.5.3 (stable channel)](https://github.com/flutter/flutter/releases/tag/2.5.3) |
 
 If you want to change the version of the Flutter engine, change <engine_version> to the appropriate version of the Flutter SDK and add the following to `conf/local.conf`:
 ```
