@@ -73,3 +73,5 @@ do_install() {
 
 FILES_${PN} = "${libdir}"
 FILES_${PN}-dev = "${includedir}"
+
+INSANE_SKIP_${PN}_append = "already-stripped"
