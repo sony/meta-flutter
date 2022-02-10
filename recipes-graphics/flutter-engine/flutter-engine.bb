@@ -2,7 +2,7 @@ AUTHOR = "Sony Group Corporation"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=c2c05f9bdd5fc0b458037c2d1fb8d95e"
 
-SRC_URI = "git://chromium.googlesource.com/chromium/tools/depot_tools.git;protocol=https"
+SRC_URI = "git://chromium.googlesource.com/chromium/tools/depot_tools.git;protocol=https;branch=main"
 SRCREV = "da768751d43b1f287bf99bea703ea13e2eedcf4d"
 
 S = "${WORKDIR}/git"
