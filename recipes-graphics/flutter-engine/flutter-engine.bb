@@ -9,9 +9,9 @@ S = "${WORKDIR}/git"
 
 inherit pkgconfig
 # TODO: Add dependent packages.
-DEPENDS = "freetype"
+DEPENDS = "freetype curl-native ca-certificates-native"
 
-GN_TOOLS_PYTHON2_PATH ??= "bootstrap-3.8.0.chromium.8_bin/python/bin"
+GN_TOOLS_PYTHON2_PATH ??= "bootstrap-2@3.8.10.chromium.23_bin"
 
 require gn-args-utils.inc
 
@@ -31,13 +31,16 @@ GN_ARGS_append = " --linux-cpu ${GN_TARGET_ARCH}"
 GN_ARGS_append = " --arm-float-abi hard"
 GN_ARGS_append = " --embedder-for-target"
 GN_ARGS_append = " --disable-desktop-embeddings"
+GN_ARGS_append = " --no-build-embedder-examples"
 ARTIFACT_DIR = "${@get_engine_artifact_dir(d)}"
 
 do_configure() {
-    # To disable auto update.
+    # Disable auto update (See: chromium/tools/depot_tools.git/+/refs/heads/main/gclient)
     export DEPOT_TOOLS_UPDATE=0
-    export PATH=${S}:${S}/${GN_TOOLS_PYTHON2_PATH}:$PATH
+    # Avoid curl certification error.
+    export CURL_CA_BUNDLE=${STAGING_DIR_NATIVE}/etc/ssl/certs/ca-certificates.crt
 
+    export PATH=${S}:${S}/${GN_TOOLS_PYTHON2_PATH}:$PATH
     cd ${WORKDIR}
     echo 'solutions = [
         {
