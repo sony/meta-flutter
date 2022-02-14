@@ -31,6 +31,7 @@ GN_ARGS_append = " --linux-cpu ${GN_TARGET_ARCH}"
 GN_ARGS_append = " --arm-float-abi hard"
 GN_ARGS_append = " --embedder-for-target"
 GN_ARGS_append = " --disable-desktop-embeddings"
+GN_ARGS_append = " --no-build-embedder-examples"
 ARTIFACT_DIR = "${@get_engine_artifact_dir(d)}"
 
 do_configure() {
