@@ -98,7 +98,7 @@ $ bitbake flutter-wayland-client
 ### DRM-GBM backend
 `libsystemd` is required to build this backend. Put the following in your `conf/local.conf`: 
 ```
-DESTRO_FEATURES_append = " systemd"
+DISTRO_FEATURES_append = " systemd"
 ```
 See also: [Using systemd for the Main Image and Using SysVinit for the Rescue Image](https://www.yoctoproject.org/docs/current/mega-manual/mega-manual.html#using-systemd-for-the-main-image-and-using-sysvinit-for-the-rescue-image)
 
