@@ -1,7 +1,9 @@
 # meta-flutter for Yocto Project
+
 This project was created to build the [Embedded Linux (eLinux) embedding for Flutter](https://github.com/sony/flutter-embedded-linux) and [Flutter Engine](https://github.com/flutter/engine) for Yocto Project based distributions.
 
 ## Companion repos
+
 | Repo | Purpose |
 | ------------- | ------------- |
 | [flutter-elinux](https://github.com/sony/flutter-elinux) | Flutter tools for eLinux |
@@ -9,14 +11,17 @@ This project was created to build the [Embedded Linux (eLinux) embedding for Flu
 | [flutter-embedded-linux](https://github.com/sony/flutter-embedded-linux) | eLinux embedding for Flutter |
 
 ## Contributing
+
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Setup environment
+
 In this README, we explain how to build for Arm64 using `core-image-weston` which is one of Yocto Images, and `dunfell` which is one of LTS Yocto versions. See also: https://docs.yoctoproject.org/
 
 There are two ways to build using Yocto. One is a build using bitbake and the other is a build using Yocto SDK.
 
 ### Building Yocto
+
 Downloading `Poky`, `meta-clang`, and `meta-flutter`:
 ```Shell
 $ git clone git://git.yoctoproject.org/poky.git -b dunfell
@@ -45,6 +50,7 @@ $ bitbake-layers add-layer ../meta-flutter
 ```
 
 ### Building Yocto SDK (Only when using cross-building with Yocto SDK)
+
 Add the following in your `conf/local.conf`:
 ```
 CLANGSDK = "1"
@@ -63,19 +69,22 @@ $ ./tmp/deploy/sdk/poky-glibc-x86_64-core-image-weston-aarch64-qemuarm64-toolcha
 ```
 
 ## Cross-building using bitbake
+
 ### Flutter Engine (libflutter_engine.so)
-The default build target is fixed to Linux and Arm64, and the Flutter Engine version is also fixed in the recipe file.
+
+The default build targets are fixed to Linux, Arm64, and the following Flutter Engine version in the recipe file.
 
 #### Flutter Engine version
+
 ```
-ENGINE_VERSION ?= "ffe7b86a1e5b5cb63c8385ae1adc759e372ee8f4"
+ENGINE_VERSION ?= "6ba2af10bb05c88a2731482cedf2cfd11cf5af0b"
 ```
 
 When creating a Flutter project, you will need to use the following version of the Flutter SDK.  
 
 | Engine version | Flutter SDK version |
 | :-------------: | :-------------: |
-| [ffe7b86a1e5b5cb63c8385ae1adc759e372ee8f4](https://github.com/flutter/engine/commit/ffe7b86a1e5b5cb63c8385ae1adc759e372ee8f4) | [3.0.3 (stable channel)](https://github.com/flutter/flutter/releases/tag/3.0.3) |
+| [6ba2af10bb05c88a2731482cedf2cfd11cf5af0b](https://github.com/flutter/engine/commit/6ba2af10bb05c88a2731482cedf2cfd11cf5af0b) | [3.0.4 (stable channel)](https://github.com/flutter/flutter/releases/tag/3.0.4) |
 
 If you want to change the version of the Flutter engine, change <engine_version> to the appropriate version of the Flutter SDK and add the following to `conf/local.conf`:
 ```
