@@ -22,3 +22,4 @@ do_install() {
 }
 
 require tasks.inc
+FILES:${PN}:append = "${libdir}"

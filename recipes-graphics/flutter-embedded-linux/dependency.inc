@@ -4,4 +4,4 @@ DEPENDS += "libxkbcommon  \
             virtual/egl \
             flutter-engine"
 
-inherit pkgconfig cmake features_check
+inherit pkgconfig cmake

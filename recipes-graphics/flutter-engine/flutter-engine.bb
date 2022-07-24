@@ -1,46 +1,43 @@
-AUTHOR = "Sony Group Corporation"
+AUTHOR = "Flutter authors"
+HOMEPAGE = "https://github.com/flutter/engine"
+BUGTRACKER = "https://github.com/flutter/flutter/issues"
+SECTION = "graphics"
 LICENSE = "BSD-3-Clause"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=c2c05f9bdd5fc0b458037c2d1fb8d95e"
-
-SRC_URI = "git://chromium.googlesource.com/chromium/tools/depot_tools.git;protocol=https;branch=main"
-SRCREV = "da768751d43b1f287bf99bea703ea13e2eedcf4d"
-
-S = "${WORKDIR}/git"
+LIC_FILES_CHKSUM = "file://flutter/LICENSE;md5=a60894397335535eb10b54e2fff9f265"
 
 inherit pkgconfig
+
 # TODO: Add dependent packages.
-DEPENDS = "freetype curl-native ca-certificates-native"
+DEPENDS = "freetype \
+           curl-native ca-certificates-native depot-tools-native"
 
-GN_TOOLS_PYTHON2_PATH ??= "bootstrap-2@3.8.10.chromium.23_bin"
+GN_TOOLS_PYTHON2_PATH ??= "bootstrap-2@3.8.10.chromium.23_bin/python/bin"
 
-require gn-args-utils.inc
-
-# Flutter 3.0.5 (stable channel)
-ENGINE_VERSION ?= "e85ea0e79c6d894c120cda4ee8ee10fe6745e187"
-PACKAGECONFIG ?= "release-mode"
+# Flutter config
+require conf/flutter-engine.conf
 PACKAGECONFIG[debug-mode] = "--runtime-mode debug --unoptimized"
 PACKAGECONFIG[profile-mode] = "--runtime-mode profile --no-lto"
 PACKAGECONFIG[release-mode] = "--runtime-mode release"
 
+require gn-args-utils.inc
 GN_TARGET_OS = "linux"
 GN_TARGET_ARCH = "arm64"
 
 GN_ARGS = "--target-sysroot ${STAGING_DIR_TARGET}${PACKAGECONFIG_CONFARGS}"
-GN_ARGS_append = " --target-os ${GN_TARGET_OS}"
-GN_ARGS_append = " --linux-cpu ${GN_TARGET_ARCH}"
-GN_ARGS_append = " --arm-float-abi hard"
-GN_ARGS_append = " --embedder-for-target"
-GN_ARGS_append = " --disable-desktop-embeddings"
-GN_ARGS_append = " --no-build-embedder-examples"
+GN_ARGS:append = " --target-os ${GN_TARGET_OS}"
+GN_ARGS:append = " --linux-cpu ${GN_TARGET_ARCH}"
+GN_ARGS:append = " --arm-float-abi hard"
+GN_ARGS:append = " --embedder-for-target"
+GN_ARGS:append = " --disable-desktop-embeddings"
+GN_ARGS:append = " --no-build-embedder-examples"
 ARTIFACT_DIR = "${@get_engine_artifact_dir(d)}"
 
 do_configure() {
-    # Disable auto update (See: chromium/tools/depot_tools.git/+/refs/heads/main/gclient)
+    export DEPOT_TOOLS=${STAGING_DIR_NATIVE}/${datadir}/depot_tools
+    export PATH=${DEPOT_TOOLS}:${DEPOT_TOOLS}/${GN_TOOLS_PYTHON2_PATH}:$PATH
     export DEPOT_TOOLS_UPDATE=0
-    # Avoid curl certification error.
     export CURL_CA_BUNDLE=${STAGING_DIR_NATIVE}/etc/ssl/certs/ca-certificates.crt
 
-    export PATH=${S}:${S}/${GN_TOOLS_PYTHON2_PATH}:$PATH
     cd ${WORKDIR}
     echo 'solutions = [
         {
@@ -61,9 +58,13 @@ do_configure() {
     cd ${WORKDIR}/src
     ./flutter/tools/gn ${GN_ARGS}
 }
+do_configure[depends] += "depot-tools-native:do_populate_sysroot"
+do_configure[network] = "1"
 
 do_compile() {
-    export PATH=${S}:${S}/${GN_TOOLS_PYTHON2_PATH}:$PATH
+    export DEPOT_TOOLS=${STAGING_DIR_NATIVE}/${datadir}/depot_tools
+    export PATH=${DEPOT_TOOLS}:${DEPOT_TOOLS}/${GN_TOOLS_PYTHON2_PATH}:$PATH
+    export DEPOT_TOOLS_UPDATE=0
 
     cd ${WORKDIR}/src
     ninja -C ${ARTIFACT_DIR}
@@ -74,7 +75,7 @@ do_install() {
     install -m 0755 ${WORKDIR}/src/${ARTIFACT_DIR}/libflutter_engine.so ${D}${libdir}
 }
 
-FILES_${PN} = "${libdir}"
-FILES_${PN}-dev = "${includedir}"
+FILES:${PN} = "${libdir}"
+FILES:${PN}-dev = "${includedir}"
 
-INSANE_SKIP_${PN}_append = "already-stripped"
+INSANE_SKIP:${PN}:append = "already-stripped"

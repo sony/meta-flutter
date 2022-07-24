@@ -22,7 +22,7 @@ $ sudo apt install chrpath diffstat gawk lz4
 
 ## Setup environment
 
-In this README, we explain how to build for Arm64 using `core-image-weston` which is one of Yocto Images, and `dunfell` which is one of LTS Yocto versions. See also: https://docs.yoctoproject.org/
+In this README, we explain how to build for Arm64 using `core-image-weston` which is one of Yocto Images, and `kirkstone` which is one of LTS Yocto versions. See also: https://docs.yoctoproject.org/
 
 There are two ways to build using Yocto. One is a build using bitbake and the other is a build using Yocto SDK.
 
@@ -31,9 +31,9 @@ There are two ways to build using Yocto. One is a build using bitbake and the ot
 Downloading `Poky`, `meta-clang`, and `meta-flutter`:
 
 ```Shell
-$ git clone git://git.yoctoproject.org/poky.git -b dunfell
-$ git clone https://github.com/kraj/meta-clang -b dunfell
-$ git clone https://github.com/sony/meta-flutter.git -b dunfell
+$ git clone git://git.yoctoproject.org/poky.git -b kirkstone
+$ git clone https://github.com/kraj/meta-clang -b kirkstone
+$ git clone https://github.com/sony/meta-flutter.git
 ```
 
 Setup the build environment using `oe-init-build-env` script in Poky:
@@ -79,7 +79,7 @@ $ ./tmp/deploy/sdk/poky-glibc-x86_64-core-image-weston-aarch64-qemuarm64-toolcha
 
 ### Flutter Engine (libflutter_engine.so)
 
-The default build targets are fixed to Linux, Arm64, and the following Flutter Engine version in the recipe file.
+The default build targets are fixed to Linux, Arm64, and the following Flutter Engine version in the config file.
 
 #### Flutter Engine version
 
