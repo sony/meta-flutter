@@ -24,7 +24,7 @@ $ sudo apt install chrpath diffstat gawk lz4
 
 ### Setup Yocto
 
-There are two ways to build using Yocto. One is [builds using bitbake](https://github.com/HidenoriMatsubayashi/meta-flutter/tree/readme#build-using-bitbake) and the other is [builds using Yocto SDK](https://github.com/HidenoriMatsubayashi/meta-flutter/tree/readme#build-using-yocto-sdk).
+There are two ways to build using Yocto. One is [builds using bitbake](./#build-using-bitbake) and the other is [builds using Yocto SDK](./#build-using-yocto-sdk).
 
 Downloading `Poky`, `meta-clang`, and `meta-flutter`:
 
