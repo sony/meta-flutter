@@ -2,31 +2,29 @@
 
 This project was created to build the [Embedded Linux (eLinux) embedding for Flutter](https://github.com/sony/flutter-embedded-linux) and [Flutter Engine](https://github.com/flutter/engine) for Yocto Project based distributions.
 
-## Companion repos
+### Repositories
 
-| Repo | Purpose |
-| ------------- | ------------- |
-| [flutter-elinux](https://github.com/sony/flutter-elinux) | Flutter tools for eLinux |
-| [flutter-elinux-plugins](https://github.com/sony/flutter-elinux-plugins) | Flutter plugins for eLinux |
-| [flutter-embedded-linux](https://github.com/sony/flutter-embedded-linux) | eLinux embedding for Flutter |
+- [flutter-elinux](https://github.com/sony/flutter-elinux): Flutter tools for eLinux
+- [flutter-elinux-plugins](https://github.com/sony/flutter-elinux-plugins): Flutter plugins for eLinux
+- [flutter-embedded-linux](https://github.com/sony/flutter-embedded-linux): eLinux embedding for Flutter
 
-## Contributing
+### Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Install requred tools
+## Setup
+
+In this README, we explain how to build for Arm64 using `core-image-weston` which is one of Yocto Images, and `kirkstone` which is one of LTS Yocto versions. See also: https://docs.yoctoproject.org/
+
+### Install requred tools
 
 ```Shell:
 $ sudo apt install chrpath diffstat gawk lz4
 ```
 
-## Setup environment
-
-In this README, we explain how to build for Arm64 using `core-image-weston` which is one of Yocto Images, and `kirkstone` which is one of LTS Yocto versions. See also: https://docs.yoctoproject.org/
-
-There are two ways to build using Yocto. One is a build using bitbake and the other is a build using Yocto SDK.
-
 ### Setup Yocto
+
+There are two ways to build using Yocto. One is [builds using bitbake](#build-using-bitbake) and the other is [builds using Yocto SDK](#build-using-yocto-sdk).
 
 Downloading `Poky`, `meta-clang`, and `meta-flutter`:
 
@@ -81,13 +79,11 @@ $ ./tmp/deploy/sdk/poky-glibc-x86_64-core-image-weston-aarch64-qemuarm64-toolcha
 
 The default build targets are fixed to Linux, Arm64, and the following Flutter Engine version in the config file.
 
-#### Flutter Engine version
-
 ```
 ENGINE_VERSION ?= "e85ea0e79c6d894c120cda4ee8ee10fe6745e187"
 ```
 
-When creating a Flutter project, you will need to use the following version of the Flutter SDK.  
+When creating a Flutter project, you will need to use the following version of the Flutter SDK.
 
 | Engine version | Flutter SDK version |
 | :-------------: | :-------------: |
