@@ -4,27 +4,27 @@ This project was created to build the [Embedded Linux (eLinux) embedding for Flu
 
 ### Repositories
 
-[flutter-elinux](https://github.com/sony/flutter-elinux): Flutter tools for eLinux
-[flutter-elinux-plugins](https://github.com/sony/flutter-elinux-plugins): Flutter plugins for eLinux
-[flutter-embedded-linux](https://github.com/sony/flutter-embedded-linux): eLinux embedding for Flutter
+- [flutter-elinux](https://github.com/sony/flutter-elinux): Flutter tools for eLinux
+- [flutter-elinux-plugins](https://github.com/sony/flutter-elinux-plugins): Flutter plugins for eLinux
+- [flutter-embedded-linux](https://github.com/sony/flutter-embedded-linux): eLinux embedding for Flutter
 
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Install requred tools
+## Setup
+
+### Install requred tools
 
 ```Shell:
 $ sudo apt install chrpath diffstat gawk lz4
 ```
 
-## Setup environment
+### Setup Yocto
 
 In this README, we explain how to build for Arm64 using `core-image-weston` which is one of Yocto Images, and `kirkstone` which is one of LTS Yocto versions. See also: https://docs.yoctoproject.org/
 
 There are two ways to build using Yocto. One is a build using bitbake and the other is a build using Yocto SDK.
-
-### Setup Yocto
 
 Downloading `Poky`, `meta-clang`, and `meta-flutter`:
 
