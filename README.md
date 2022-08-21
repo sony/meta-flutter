@@ -14,6 +14,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Setup
 
+In this README, we explain how to build for Arm64 using `core-image-weston` which is one of Yocto Images, and `kirkstone` which is one of LTS Yocto versions. See also: https://docs.yoctoproject.org/
+
 ### Install requred tools
 
 ```Shell:
@@ -22,9 +24,7 @@ $ sudo apt install chrpath diffstat gawk lz4
 
 ### Setup Yocto
 
-In this README, we explain how to build for Arm64 using `core-image-weston` which is one of Yocto Images, and `kirkstone` which is one of LTS Yocto versions. See also: https://docs.yoctoproject.org/
-
-There are two ways to build using Yocto. One is a build using bitbake and the other is a build using Yocto SDK.
+There are two ways to build using Yocto. One is [builds using bitbake](https://github.com/HidenoriMatsubayashi/meta-flutter/tree/readme#build-using-bitbake) and the other is [builds using Yocto SDK](https://github.com/HidenoriMatsubayashi/meta-flutter/tree/readme#build-using-yocto-sdk).
 
 Downloading `Poky`, `meta-clang`, and `meta-flutter`:
 
