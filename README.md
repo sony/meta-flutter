@@ -8,7 +8,7 @@ This project was created to build the [Embedded Linux (eLinux) embedding for Flu
 - [flutter-elinux-plugins](https://github.com/sony/flutter-elinux-plugins): Flutter plugins for eLinux
 - [flutter-embedded-linux](https://github.com/sony/flutter-embedded-linux): eLinux embedding for Flutter
 
-## Contributing
+### Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
