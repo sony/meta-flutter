@@ -30,6 +30,7 @@ GN_ARGS:append = " --arm-float-abi hard"
 GN_ARGS:append = " --embedder-for-target"
 GN_ARGS:append = " --disable-desktop-embeddings"
 GN_ARGS:append = " --no-build-embedder-examples"
+GN_ARGS:append = " --enable-fontconfig"
 ARTIFACT_DIR = "${@get_engine_artifact_dir(d)}"
 
 do_configure() {
