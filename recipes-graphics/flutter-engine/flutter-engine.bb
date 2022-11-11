@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/flutter/engine"
 BUGTRACKER = "https://github.com/flutter/flutter/issues"
 SECTION = "graphics"
 LICENSE = "BSD-3-Clause"
-LIC_FILES_CHKSUM = "file://flutter/LICENSE;md5=a60894397335535eb10b54e2fff9f265"
+LIC_FILES_CHKSUM = "file://${WORKDIR}/LICENSE;md5=a60894397335535eb10b54e2fff9f265"
 
 inherit pkgconfig
 
