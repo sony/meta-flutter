@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/flutter/engine"
 BUGTRACKER = "https://github.com/flutter/flutter/issues"
 SECTION = "graphics"
 LICENSE = "BSD-3-Clause"
-LIC_FILES_CHKSUM = "file://flutter/LICENSE;md5=a60894397335535eb10b54e2fff9f265"
+LIC_FILES_CHKSUM = "file://${WORKDIR}/src/flutter/LICENSE;md5=a60894397335535eb10b54e2fff9f265"
 
 inherit pkgconfig
 
@@ -32,6 +32,8 @@ GN_ARGS:append = " --disable-desktop-embeddings"
 GN_ARGS:append = " --no-build-embedder-examples"
 GN_ARGS:append = " --enable-fontconfig"
 ARTIFACT_DIR = "${@get_engine_artifact_dir(d)}"
+
+do_populate_lic[depends] += "${PN}:do_configure"
 
 do_configure() {
     export DEPOT_TOOLS=${STAGING_DIR_NATIVE}/${datadir}/depot_tools
