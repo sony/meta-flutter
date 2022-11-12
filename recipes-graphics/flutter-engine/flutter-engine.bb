@@ -33,6 +33,8 @@ GN_ARGS:append = " --no-build-embedder-examples"
 GN_ARGS:append = " --enable-fontconfig"
 ARTIFACT_DIR = "${@get_engine_artifact_dir(d)}"
 
+do_populate_lic[depends] += "${PN}:do_configure"
+
 do_configure() {
     export DEPOT_TOOLS=${STAGING_DIR_NATIVE}/${datadir}/depot_tools
     export PATH=${DEPOT_TOOLS}:${DEPOT_TOOLS}/${GN_TOOLS_PYTHON2_PATH}:$PATH
