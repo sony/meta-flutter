@@ -9,7 +9,8 @@ inherit pkgconfig
 
 # TODO: Add dependent packages.
 DEPENDS = "freetype \
-           curl-native ca-certificates-native depot-tools-native"
+           curl-native ca-certificates-native depot-tools-native \
+           wayland wayland-protocols wayland-native"
 
 GN_TOOLS_PYTHON2_PATH ??= "bootstrap-2@3.8.10.chromium.23_bin/python/bin"
 
