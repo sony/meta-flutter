@@ -87,7 +87,7 @@ When creating a Flutter project, you will need to use the following version of t
 
 | Engine version | Flutter SDK version |
 | :-------------: | :-------------: |
-| [ec975089acb540fc60752606a3d3ba809dd1528b](https://github.com/flutter/engine/commit/ec975089acb540fc60752606a3d3ba809dd1528b) | [3.7.9 (stable channel)](https://github.com/flutter/flutter/releases/tag/3.7.9) |
+| [ec975089acb540fc60752606a3d3ba809dd1528b](https://github.com/flutter/engine/commit/ec975089acb540fc60752606a3d3ba809dd1528b) | [3.7.10 (stable channel)](https://github.com/flutter/flutter/releases/tag/3.7.10) |
 
 If you want to change the version of the Flutter engine, change <engine_version> to the appropriate version of the Flutter SDK and add the following to `conf/local.conf`:
 ```
