@@ -32,6 +32,8 @@ GN_ARGS:append = " --embedder-for-target"
 GN_ARGS:append = " --disable-desktop-embeddings"
 GN_ARGS:append = " --no-build-embedder-examples"
 GN_ARGS:append = " --enable-fontconfig"
+GN_ARGS:append = " --no-goma"
+
 ARTIFACT_DIR = "${@get_engine_artifact_dir(d)}"
 
 do_populate_lic[depends] += "${PN}:do_configure"
