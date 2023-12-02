@@ -80,14 +80,14 @@ $ ./tmp/deploy/sdk/poky-glibc-x86_64-core-image-weston-aarch64-qemuarm64-toolcha
 The default build targets are fixed to Linux, Arm64, and the following Flutter Engine version in the config file.
 
 ```
-ENGINE_VERSION ?= "74d16627b940bb15e50891f82cad6c3e3465bd6d"
+ENGINE_VERSION ?= "cf7a9d0800f2a5da166dbe0eb9fb2476018269b1"
 ```
 
 When creating a Flutter project, you will need to use the following version of the Flutter SDK.
 
 | Engine version | Flutter SDK version |
 | :-------------: | :-------------: |
-| [74d16627b940bb15e50891f82cad6c3e3465bd6d](https://github.com/flutter/engine/commit/74d16627b940bb15e50891f82cad6c3e3465bd6d) | [3.16.0 (stable channel)](https://github.com/flutter/flutter/releases/tag/3.16.0) |
+| [cf7a9d0800f2a5da166dbe0eb9fb2476018269b1](https://github.com/flutter/engine/commit/cf7a9d0800f2a5da166dbe0eb9fb2476018269b1) | [3.16.2 (stable channel)](https://github.com/flutter/flutter/releases/tag/3.16.2) |
 
 If you want to change the version of the Flutter engine, change <engine_version> to the appropriate version of the Flutter SDK and add the following to `conf/local.conf`:
 ```
