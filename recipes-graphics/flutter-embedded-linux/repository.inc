@@ -6,5 +6,5 @@ LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=d45359c88eb146940e4bede4f08c821a"
 
 SRC_URI = "git://github.com/sony/flutter-embedded-linux.git;protocol=https;branch=master"
-SRCREV = "28de1eb56d6afff0ae7bdc68787a0ae620ccc51d"
+SRCREV = "185d73a596b7be5793f0febc0967f0e576cb8ce7"
 S = "${WORKDIR}/git"
