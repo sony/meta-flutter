@@ -3,7 +3,7 @@ LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=c2c05f9bdd5fc0b458037c2d1fb8d95e"
 
 SRC_URI = "git://chromium.googlesource.com/chromium/tools/depot_tools.git;protocol=https;branch=main"
-SRCREV = "2cd48234f1fdef2e61a06a7a43479fe8407baaf0"
+SRCREV = "670ce748bea1fbb87cf707718239bc3a4c3a08ad"
 
 S = "${WORKDIR}/git"
 
